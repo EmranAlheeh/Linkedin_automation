@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="password" value="0592622762"/>
+    <parameter name="username" value="im0592622762@gmail.com"/>
+    <classes>
+      <class name="com.linkedin.test.GoogleSearchTest">
+        <methods>
+          <include name="search"/>
+          <include name="runDriver"/>
+        </methods>
+      </class> <!-- com.linkedin.test.GoogleSearchTest -->
+      <class name="com.linkedin.test.LinkedInSearchTest">
+        <methods>
+          <include name="runDriver"/>
+          <include name="Login" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.linkedin.test.LinkedInSearchTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
