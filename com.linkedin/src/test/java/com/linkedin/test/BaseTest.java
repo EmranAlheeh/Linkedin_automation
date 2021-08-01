@@ -1,9 +1,7 @@
 package com.linkedin.test;
 
 import org.openqa.selenium.WebDriver;
-
 import org.testng.annotations.BeforeSuite;
-
 import com.linkedin.utility.ConfigReader;
 
 public class BaseTest {

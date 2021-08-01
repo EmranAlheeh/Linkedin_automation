@@ -15,11 +15,8 @@ public class BasePage {
 		this.driver = driver;
 	}
 
+	@SuppressWarnings("deprecation")
 	public void waiteElement(By locator) {
-//		@SuppressWarnings("deprecation")
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-		// driver= new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
@@ -35,22 +32,37 @@ public class BasePage {
 		driver.findElement(locator).sendKeys(arg, Keys.ENTER);
 	}
 
-	public void getHrefOfNumberOfElements(By locator) {
+	public ArrayList<String> getListHrefOfElements(By locator) {
+		ArrayList<String> array = new ArrayList<>();
 		waiteElement(locator);
 
 		ArrayList<WebElement> findElements = (ArrayList<WebElement>) driver.findElements(locator);
 
 		// this are all the links you like to visit
-		for (int i = 0; i < findElements.size(); i++) {
+		for (int i = 0; i < 7; i++) {
 			WebElement webElement = findElements.get(i);
-			System.out.println(webElement.getAttribute("href"));
-
+			// System.out.println(webElement.getAttribute("href"));
+			array.add(webElement.getAttribute("href"));
 		}
+		return array;
 
 	}
 
-	public void closeChrome() {
+	public ArrayList<String> getTextOfElementscContent(By locator) {
+		waiteElement(locator);
+		ArrayList<String> array = new ArrayList<>();
+		ArrayList<WebElement> findElements = (ArrayList<WebElement>) driver.findElements(locator);
 
-		driver.close();
+		// this are all the links you like to visit
+		for (int i = 0; i < 8; i++) {
+			WebElement webElement = findElements.get(i);
+			// System.out.println(webElement.getAttribute("href"));
+			array.add(webElement.getText());
+		}
+		return array;
+
 	}
+
+	 
+	 
 }

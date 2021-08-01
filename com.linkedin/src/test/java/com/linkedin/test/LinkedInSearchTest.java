@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
+import com.linkedin.page.GoogleSearchPage;
 import com.linkedin.page.LinkedInSearchPage;
 import com.linkedin.utility.ConfigReader;
 import com.opencsv.exceptions.CsvValidationException;
@@ -16,6 +16,7 @@ public class LinkedInSearchTest extends BaseTest {
 
 	ConfigReader config = new ConfigReader();
 	LinkedInSearchPage search;
+	GoogleSearchPage googlePage;
 
 	@Parameters({ "username", "password" })
 	@Test
@@ -27,6 +28,9 @@ public class LinkedInSearchTest extends BaseTest {
 		search.enterPassword(password);
 		search.clickOnSignin();
 		search.searchOnLinkedin();
-		// driver.close();
+
+		search.saveOutputsSearchInCsvFile(search.GetProfileName(), search.GetProfilePosition(),
+				search.GetProfileLocation());
+
 	}
 }

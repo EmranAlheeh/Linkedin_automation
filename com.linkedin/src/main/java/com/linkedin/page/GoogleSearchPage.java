@@ -1,6 +1,7 @@
 package com.linkedin.page;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import org.openqa.selenium.WebDriver;
 import com.linkedin.utility.CsvReadAndWrite;
 import com.linkedin.utility.GoogleLocators;
@@ -15,16 +16,20 @@ public class GoogleSearchPage extends BasePage {
 		csv = new CsvReadAndWrite();
 	}
 
-	public void searchOnGoogle() throws IOException, CsvValidationException {
+	public ArrayList<String> searchOnGoogle() throws IOException, CsvValidationException {
 
 		String linkedIn = "linkedin.com";
+		// search formula
 		String searchContent = (csv.getDataForSearch() + " " + csv.getTypeOfSearch() + " " + linkedIn);
 
 		waiteElement(GoogleLocators.searchInput);
+		// search about this data
 		sendKeysForInputAndClickEnter(GoogleLocators.searchInput, searchContent);
 
 		// wait until the google page shows the result
-		getHrefOfNumberOfElements(GoogleLocators.resultElements);
+
+		ArrayList<String> hrefOfGoogle = getListHrefOfElements(GoogleLocators.resultElements);
+		return hrefOfGoogle;
 
 	}
 

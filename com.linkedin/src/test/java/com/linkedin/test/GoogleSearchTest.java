@@ -21,9 +21,6 @@ public class GoogleSearchTest extends BaseTest {
 		driver.get(config.getGoogleUrl());
 		googlePage = new GoogleSearchPage(driver);
 		googlePage.searchOnGoogle();
-		// googlePage.closeChrome();
-		// driver.quit();
 
 	}
-
 }

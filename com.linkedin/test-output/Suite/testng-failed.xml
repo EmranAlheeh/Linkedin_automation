@@ -5,12 +5,6 @@
     <parameter name="password" value="0592622762"/>
     <parameter name="username" value="im0592622762@gmail.com"/>
     <classes>
-      <class name="com.linkedin.test.GoogleSearchTest">
-        <methods>
-          <include name="search"/>
-          <include name="runDriver"/>
-        </methods>
-      </class> <!-- com.linkedin.test.GoogleSearchTest -->
       <class name="com.linkedin.test.LinkedInSearchTest">
         <methods>
           <include name="runDriver"/>

@@ -10,7 +10,7 @@ import com.opencsv.exceptions.CsvValidationException;
 
 public class CsvReadAndWrite {
 	String csvReadpath = "C:\\Users\\MUDXW\\Desktop\\com.linkedin\\src\\main\\resources\\search.csv";
-	String csvWritePath = "C:\\Users\\user\\eclipse-workspace\\com.linkedin\\src\\main\\resources\\output.csv";
+	String csvWritePath = "C:\\Users\\MUDXW\\Desktop\\com.linkedin\\src\\main\\resources\\output.csv";
 	private CSVReader csvReader;
 	String[] csvCell;
 
@@ -34,7 +34,10 @@ public class CsvReadAndWrite {
 
 	public void writeOnCsv(ArrayList<String[]> array) throws IOException {
 		try (CSVWriter writer = new CSVWriter(new FileWriter(csvWritePath))) {
-			writer.writeAll(array);
+			for (int i = 0; i < array.size(); i++) {
+				
+				writer.writeNext(array.get(i));
+			}
 		}
 	}
 
