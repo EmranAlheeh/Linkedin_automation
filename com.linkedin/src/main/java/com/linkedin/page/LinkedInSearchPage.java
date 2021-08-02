@@ -33,7 +33,8 @@ public class LinkedInSearchPage extends BasePage {
 		clickOnElement(LinkedInLocatores.signin);
 	}
 
-	public ArrayList<String> searchOnLinkedin() throws IOException, CsvValidationException {
+	// Search on linkedin and select filter of data and return list of this results
+	public ArrayList<String> searchOnLinkedinAndReturnResults() throws IOException, CsvValidationException {
 		// filter locator xpath
 		String filter = (LinkedInLocatores.filterLocators + csv.getTypeOfSearch() + "']");
 
@@ -72,7 +73,7 @@ public class LinkedInSearchPage extends BasePage {
 
 		return location;
 	}
-
+	// save the results data of this search on csv file  
 	public void saveOutputsSearchInCsvFile(ArrayList<String> arrayOfName, ArrayList<String> arrayOfPosition,
 			ArrayList<String> arrayOfLocation) throws IOException {
 		ArrayList<String[]> output = new ArrayList<String[]>();
@@ -91,5 +92,9 @@ public class LinkedInSearchPage extends BasePage {
 		}
 		csv.writeOnCsv(output);
 
+	}
+	// Delete All data of Csv file
+	public void deleteContentOfCsv() throws Exception {
+		csv.clearCsv();
 	}
 }

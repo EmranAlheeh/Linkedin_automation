@@ -16,7 +16,7 @@ public class GoogleSearchPage extends BasePage {
 		csv = new CsvReadAndWrite();
 	}
 
-	public ArrayList<String> searchOnGoogle() throws IOException, CsvValidationException {
+	public ArrayList<String> searchOnGoogleAndReturnHrefOfResults() throws IOException, CsvValidationException {
 
 		String linkedIn = "linkedin.com";
 		// search formula

@@ -3,6 +3,7 @@ package com.linkedin.utility;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
@@ -31,14 +32,24 @@ public class CsvReadAndWrite {
 		}
 		return searchType;
 	}
-
+	//Add output data in csv file
 	public void writeOnCsv(ArrayList<String[]> array) throws IOException {
 		try (CSVWriter writer = new CSVWriter(new FileWriter(csvWritePath))) {
+
 			for (int i = 0; i < array.size(); i++) {
-				
+
 				writer.writeNext(array.get(i));
 			}
+
 		}
+	}
+	//delete all data in csv file
+	public void clearCsv() throws Exception {
+		FileWriter fw = new FileWriter(csvWritePath, false);
+		PrintWriter pw = new PrintWriter(fw, false);
+		pw.flush();
+		pw.close();
+		fw.close();
 	}
 
 }

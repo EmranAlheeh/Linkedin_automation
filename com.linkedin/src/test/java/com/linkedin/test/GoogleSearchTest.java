@@ -20,7 +20,7 @@ public class GoogleSearchTest extends BaseTest {
 		driver = new ChromeDriver();
 		driver.get(config.getGoogleUrl());
 		googlePage = new GoogleSearchPage(driver);
-		googlePage.searchOnGoogle();
+		googlePage.searchOnGoogleAndReturnHrefOfResults();
 
 	}
 }

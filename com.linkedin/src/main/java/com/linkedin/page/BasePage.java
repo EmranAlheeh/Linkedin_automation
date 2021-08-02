@@ -31,7 +31,7 @@ public class BasePage {
 	public void sendKeysForInputAndClickEnter(By locator, String arg) {
 		driver.findElement(locator).sendKeys(arg, Keys.ENTER);
 	}
-
+	//get href of elements 
 	public ArrayList<String> getListHrefOfElements(By locator) {
 		ArrayList<String> array = new ArrayList<>();
 		waiteElement(locator);
@@ -47,7 +47,7 @@ public class BasePage {
 		return array;
 
 	}
-
+	//get text content of elements
 	public ArrayList<String> getTextOfElementscContent(By locator) {
 		waiteElement(locator);
 		ArrayList<String> array = new ArrayList<>();
