@@ -62,6 +62,11 @@ public class BasePage {
 		return array;
 
 	}
+	public String getPageUrl() {
+		String url;
+		url=driver.getCurrentUrl();
+		return url;
+	}
 
 	 
 	 
