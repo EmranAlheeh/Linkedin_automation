@@ -5,12 +5,13 @@
     <parameter name="password" value="0592622762"/>
     <parameter name="username" value="im0592622762@gmail.com"/>
     <classes>
-      <class name="com.linkedin.test.LinkedInSearchTest">
+      <class name="com.linkedin.test.LinkedInLoginTest">
         <methods>
+          <include name="Login" invocation-numbers="2 3"/>
           <include name="runDriver"/>
-          <include name="Login" invocation-numbers="0"/>
+          <include name="closeDriver"/>
         </methods>
-      </class> <!-- com.linkedin.test.LinkedInSearchTest -->
+      </class> <!-- com.linkedin.test.LinkedInLoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

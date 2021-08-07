@@ -1,6 +1,7 @@
 package com.linkedin.test;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import com.linkedin.utility.ConfigReader;
@@ -13,5 +14,8 @@ public class BaseTest {
 	public void runDriver() {
 		System.setProperty(config.getWebDriver(), config.getChromeDriver());
 	}
-
+	@AfterTest
+	public void closeDriver() {
+		driver.quit();
+	}
 }

@@ -14,7 +14,7 @@ import com.linkedin.page.LinkedInSearchPage;
 import com.linkedin.utility.ConfigReader;
 import com.opencsv.exceptions.CsvValidationException;
 
-public class SearchTest {
+public class SearchTest extends BaseTest {
 	WebDriver driver;
 	ConfigReader config = new ConfigReader();
 	GoogleSearchPage googlePage;

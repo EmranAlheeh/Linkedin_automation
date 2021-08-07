@@ -63,4 +63,9 @@ public class ConfigReader {
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
+
+	public Object getData(int i, int i2, int j) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

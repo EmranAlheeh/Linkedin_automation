@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.linkedin.test.LinkedInSearchTest">
+      <class name="com.linkedin.test.SearchTest">
         <methods>
           <include name="runDriver"/>
-          <include name="Login"/>
+          <include name="closeDriver"/>
+          <include name="searchTest"/>
         </methods>
-      </class> <!-- com.linkedin.test.LinkedInSearchTest -->
+      </class> <!-- com.linkedin.test.SearchTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

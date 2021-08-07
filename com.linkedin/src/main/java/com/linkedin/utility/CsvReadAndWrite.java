@@ -10,8 +10,8 @@ import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 
 public class CsvReadAndWrite {
-	String csvReadpath = "C:\\Users\\MUDXW\\Desktop\\com.linkedin\\src\\main\\resources\\search.csv";
-	String csvWritePath = "C:\\Users\\MUDXW\\Desktop\\com.linkedin\\src\\main\\resources\\output.csv";
+	String csvReadpath = "C:\\Users\\misol\\eclipse-workspace\\com.linkedin\\src\\main\\resources\\search.csv";
+	String csvWritePath = "C:\\Users\\misol\\eclipse-workspace\\com.linkedin\\src\\main\\resources\\output.csv";
 	private CSVReader csvReader;
 	String[] csvCell;
 
